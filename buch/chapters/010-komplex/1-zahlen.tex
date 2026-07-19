@@ -1,0 +1,171 @@
+%
+% 1-zahlen.tex -- 1. Komplexe Zahlen
+%
+% (c) 2025 Prof Dr Andreas Müller
+%
+\section{Komplexe Zahlen
+\label{buch:kmoplex:section:zahlen}}
+\kopfrechts{Komplexe Zahlen}
+Die Lösungsformel für die quadratische Gleichung
+\begin{equation}
+x^2 + q = px
+\qquad\text{oder}\qquad
+x^2 - px + q = 0
+\label{buch:komplex:zahlen:eqn:qeq}
+\end{equation}
+\index{quadratische Gleichung}%
+war bereits in babylonischer Zeit etwa 2000 BC bekannt.
+Auf Keilschrifttafeln aus der dritten Dynastie von Ur findet man den
+\index{Keilschrifttafel}%
+folgenden Algorithus:
+\begin{enumerate}
+\item Berechne die Hälfte von $p$: $\displaystyle\frac{p}{2}$.
+\item Quadriere das Resultat: $\displaystyle\biggl(\frac{p}{2}\biggr)^2$.
+\item Subtrahiere $q$: $\displaystyle\biggl(\frac{p}2\biggr)^2-q$.
+\item Finde die (positive) Quadratwurzel mithilfe einer Tabelle von
+Quadratzahlen:
+\[
+\!\sqrt{\rlap{\phantom{\bigg|}}\smash{\biggl(\frac{p}2\biggr)^2-q}}.
+\]
+\item Addiere die Resultate der Schritte 1 und 4:
+$\displaystyle\frac{p}2+\!\sqrt{\rlap{\phantom{\bigg|}}\smash{\biggl(\frac{p}2\biggr)^2-q}}$.
+\end{enumerate}
+Der Algorithmus trägt sowohl in der
+Formulierung~\eqref{buch:komplex:zahlen:eqn:qeq}
+wie auch in der Durchführung der Tatsache Rechnung, dass die
+Babylonier die negativen Zahlen noch nicht kannten.
+Vor allem im Schritt 4 wird deutlich, dass nur positive Quadratwurzeln
+in Betracht gezogen wurden.
+Dies hat zur Folge, dass der Algorithmus nur eine Lösung finden kann,
+selbst wenn wie im Falle der Gleichung
+\begin{equation}
+x^2 + 3 = 4x
+\qquad
+\Rightarrow
+\qquad
+p=4,\;q=3
+\label{buch:komplex:zahlen:eqn:qepos}
+\end{equation}
+zwei positive, ganzzahlige Lösungen existieren.
+Im Falle der Gleichung~\eqref{buch:komplex:zahlen:eqn:qepos}
+ergibt der Algorithmus
+\begin{align*}
+x
+&=
+\frac{p}2
++
+\!\sqrt{\rlap{$\phantom{\bigg|}$}\smash{\biggl(\frac{p}{2}\biggr)^2-q}}
+=
+\frac{4}{2}
++
+\!\sqrt{\rlap{$\phantom{\biggl|}$}\smash{\biggl(\frac{4}{2}\biggr)^2-3}}
+=
+2
++
+\!\sqrt{2^2-3}
+=
+2
++
+\!\sqrt{1}
+=
+3.
+\end{align*}
+Die moderne Lösungsformel liefert dagegen die zwei Lösungen
+\index{Losungsformel@Lösungsformel}%
+\begin{align*}
+x_\pm
+&=
+\frac{p}2
+\pm
+\!\sqrt{\rlap{$\phantom{\bigg|}$}\smash{\biggl(\frac{p}{2}\biggr)^2-q}}
+=
+\frac{4}{2}
+\pm
+\!\sqrt{\rlap{$\phantom{\biggl|}$}\smash{\biggl(\frac{4}{2}\biggr)^2-3}}
+=
+2\pm1
+=
+\begin{cases}
+3\\
+1.
+\end{cases}
+\end{align*}
+Beide Lösung erfüllen ganz offensichtlich die ursprüngliche
+Gleichung
+\begin{align*}
+x_+^2 + 3 &= 4x_+
+&&\Leftrightarrow&
+3^2 + 3 &= 4\cdot 3
+&&\Leftrightarrow&
+12&=12,
+\\
+x_-^2 + 3 &= 4x_-
+&&\Leftrightarrow&
+1^2 + 3 &= 4\cdot 1
+&&\Leftrightarrow&
+4&=4,
+\end{align*}
+auch wenn die zweite Lösung nicht vom Algorithmus gefunden werden kann.
+
+In Schritt~4 wird verlangt, dass die Quadratwurzel mithilfe einer
+Tabelle von Quadratzahlen gefunden werden muss.
+\index{Quadratwurzel}%
+Es können also nur Lösungen gefunden werden, für die die Quadratwurzel
+im Schritt~4 eine in babylonischer Zeit bekannte Zahl ergab, also
+\index{Babylon}%
+im kompliziertesten Fall ein Bruch oder, wie wir heute sagen würden,
+eine rationale Zahl.
+Die Gleichung
+\begin{align}
+x^2 + 4x &= 2
+&&\Rightarrow&
+p&=4,\; q=2
+&&\Rightarrow&
+x
+&=
+\frac{p}{2}
++
+\!\sqrt{\rlap{$\phantom{\bigg|}$}\smash{\biggl(\frac{p}2\biggr)^2-q}}
+\label{buch:komplex:zahlen:eqn:qeunloesbar}
+\\
+&&&&&&&&
+&=
+\frac{4}{2}
++
+\!\sqrt{\rlap{$\phantom{\bigg|}$}\smash{\biggl(\frac{4}2\biggr)^2-2}}
+\notag
+\\
+&&&&&&&&
+&=
+2
++
+\!\sqrt{2^2-2}
+=
+2
++
+\!\sqrt{2}
+\notag
+\end{align}
+Die Zahl $2$ kommt in keiner Tabelle von Quadratzahlen vor.
+\index{Quadratzahl}%
+Die Gleichung~\eqref{buch:komplex:zahlen:eqn:qeunloesbar} ist daher für die
+babylonische Mathematik unlösbar.
+Die moderne Mathematik muss also das Problem lösen, den zur Verfügung
+stehenden Zahlenbereich so zu erweitern, dass Gleichungen
+wie \eqref{buch:komplex:zahlen:eqn:qeunloesbar} lösbar sind.
+
+Die genauere Inspektion der ursprünglichen
+Gleichung~\eqref{buch:komplex:zahlen:eqn:qeq} fördert noch
+weitere Schwierigkeiten des Lösungsalgorithmus zu Tage, zum Beispiel
+den Fall $p=0$, $q=1$, der auf die Lösung $x=\sqrt{-1}$ führt.
+in diesem Abschnitt sollen daher Techniken entwickelt werden, wie die
+rationalen Zahlen so erweitert werden können, dass beliebige polynomiale
+Gleichungen gelöst werden können.
+
+\input{chapters/010-komplex/11-reell.tex}
+\input{chapters/010-komplex/12-algebraisch.tex}
+\input{chapters/010-komplex/13-komplex.tex}
+\input{chapters/010-komplex/14-matrix.tex}
+\input{chapters/010-komplex/15-geometrisch.tex}
+\input{chapters/010-komplex/16-quaternionen.tex}
+

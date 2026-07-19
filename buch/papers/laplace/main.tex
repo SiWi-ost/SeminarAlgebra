@@ -1,0 +1,29 @@
+%
+% main.tex -- Paper zum Thema Laplace
+%
+% (c) 2020 Autor, OST Ostschweizer Fachhochschule
+%
+% !TEX root = ../../buch.tex
+% !TEX encoding = UTF-8
+%
+\chapter{Die Laplace-Inversion: Vom Bromwich-Integral zur numerischen Talbot-Kontur \label{chapter:laplace}}
+\kopflinks{Die Laplace-Inversion: Vom Bromwich-Integral zur numerischen Talbot-Kontur}
+\begin{refsection}
+\chapterauthor{Simon Widmer und Noel Karlsson}
+
+Diese Arbeit widmet sich der Inversion der Laplace-Transformation jenseits gängiger Korrespondenztabellen. 
+Im Zentrum steht dabei das komplexe Bromwich-Integral. 
+Der Text beleuchtet dessen analytische Auswertung mittels Pfaddeformation und Residuensatz und zeigt, wie sich anspruchsvolle Singularitäten -- etwa Polketten oder Verzweigungsschnitte aus der Wärmeleitungsgleichung -- elegant handhaben lassen. 
+Den Abschluss bildet die numerische Inversion: Die Deformation auf die Talbot-Kontur überführt das oszillierende Integral in eine rasch abklingende Form und ermöglicht eine hocheffiziente numerische Auswertung. 
+So schlägt das Paper die Brücke von der reinen Funktionentheorie zur algorithmischen Praxis.
+
+
+\input{papers/laplace/01_einleitung.tex}
+\input{papers/laplace/01_herleitung.tex}
+\input{papers/laplace/02_residuensatz.tex}
+\input{papers/laplace/03_verzweigung.tex}
+\input{papers/laplace/04_endlicher_stab.tex}
+\input{papers/laplace/05_talbot.tex}
+
+\printbibliography[heading=subbibliography]
+\end{refsection}

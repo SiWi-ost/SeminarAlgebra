@@ -1,0 +1,12 @@
+This is makeindex, version 2.16 [MiKTeX 25.12].
+Scanning input file buch.idx....
+!! Input index error (file = buch.idx, line = 170):
+   -- Extra `@' at position 4 of first argument.
+
+!! Input index error (file = buch.idx, line = 187):
+   -- First argument too long (max 10240).
+done (185 entries accepted, 2 rejected).
+Sorting entries....done (1444 comparisons).
+Generating output file buch.ind....done (235 lines written, 0 warnings).
+Output written in buch.ind.
+Transcript written in buch.ilg.

@@ -1,0 +1,66 @@
+%
+% rekursion.tex -- Rekursionsbeziehung zwischen den Koeffizienten
+%
+% (c) 2021 Prof Dr Andreas Müller, OST Ostschweizer Fachhochschule
+%
+\documentclass[tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math}
+\definecolor{darkred}{rgb}{0.8,0,0}
+\begin{document}
+\def\skala{1}
+\def\xmax{3}
+\def\ymax{3}
+\def\h{2.0}
+\def\punkt#1#2{
+	({(#1)*\h},{(#2)*\h})
+}
+\begin{tikzpicture}[>=latex,thick,scale=\skala]
+
+\foreach \x in {0,...,\xmax}{
+	\draw[color=gray!20,line width=2mm]
+		\punkt{\x}{-0.5} -- \punkt{\x}{\ymax+0.5};
+}
+\foreach \y in {0,...,\ymax}{
+	\draw[color=gray!20,line width=2mm]
+		\punkt{-0.5}{\y} -- \punkt{\xmax+0.5}{\y};
+}
+\foreach \x in {0,...,\xmax}{
+	\foreach \y in {0,...,\ymax}{
+		\fill[color=white] \punkt{\x}{\y} circle[radius=0.1];
+		\draw \punkt{\x}{\y} circle[radius=0.1];
+	}
+}
+
+\draw[->] \punkt{-0.5}{-0.5} -- \punkt{\xmax+0.5}{-0.5}
+	coordinate[label={$k$}];
+\foreach \x in {0,...,\xmax}{
+	\draw \punkt{\x}{-0.5-0.05/\h} -- ++(0,0.1);
+}
+\draw[->] \punkt{-0.5}{-0.5} -- \punkt{-0.5}{\ymax+0.5}
+	coordinate[label={right:$l$}];;
+\foreach \y in {0,...,\ymax}{
+	\draw \punkt{-0.5-0.05/\h}{\y} -- ++(0.1,0);
+}
+
+\node at \punkt{3}{1} [above right] {$a_{k,n-k}x^ky^{n-k}$};
+\node at \punkt{1}{3} [above right] {$a_{k,l-2}x^ky^{n-k+2}$};
+
+\draw[->,color=darkred,line width=3pt,shorten <= 1.5mm, shorten >= 1.0mm]
+	\punkt{3}{1} -- \punkt{1}{1};
+\draw[->,color=blue,line width=3pt,shorten <= 1.5mm, shorten >= 1.0mm]
+	\punkt{1}{3} -- \punkt{1}{1};
+
+\node[color=darkred] at \punkt{1.2}{1} [below right]
+	{$k(k-1)a_{k,n-k}x^{k-2}y^{n-k}$};
+\fill[color=white] \punkt{-0.6}{1.2} rectangle \punkt{-0.4}{1.55};
+\node[color=blue] at \punkt{1}{1.2} [above left]
+	{$(n-k+2)(n-k+1)a_{k-2,l+2}x^{k-2}y^{n-k}$};
+
+\end{tikzpicture}
+\end{document}
+

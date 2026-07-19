@@ -1,0 +1,59 @@
+%
+% wurzel2.tex -- template for standalon tikz images
+%
+% (c) 2021 Prof Dr Andreas Müller, OST Ostschweizer Fachhochschule
+%
+\documentclass[tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{txfonts}
+\usepackage{pgfplots}
+\usepackage{csvsimple}
+\usetikzlibrary{arrows,intersections,math}
+\begin{document}
+\def\skala{6}
+\def\kurvenradius{0.6}
+\pgfmathparse{1.8*180}
+\xdef\kurvemax{\pgfmathresult}
+\def\kurvesteps{18}
+\def\patchradius{0.25}
+\definecolor{kurvenfarbe}{rgb}{0.9,0.9,0}
+\definecolor{patchfarbe}{rgb}{0.8,0.2,0.4}
+\definecolor{schnittfarbe}{rgb}{0.2,0.2,1.0}
+\begin{tikzpicture}[>=latex,thick,scale=\skala]
+
+\draw[->] (-0.95,0) -- (0.95,0) coordinate[label={$\operatorname{Re}$}];
+\draw[->] (0,-0.95) -- (0,0.95) coordinate[label={right:$\operatorname{Im}$}];
+\foreach \k in {0,...,\kurvesteps}{
+	\pgfmathparse{\k*(\kurvemax/\kurvesteps)}
+	\xdef\winkel{\pgfmathresult}
+	\fill[color=patchfarbe!20,opacity=0.5]
+		(\winkel:\kurvenradius) circle[radius=\patchradius];
+	\draw[color=patchfarbe]
+		(\winkel:\kurvenradius) circle[radius=\patchradius];
+}
+
+\draw[color=kurvenfarbe,line width=2pt]
+	(0:\kurvenradius) arc(0:\kurvemax:\kurvenradius);
+
+\foreach \k in {0,...,\kurvesteps}{
+	\pgfmathparse{\k*(\kurvemax/\kurvesteps)}
+	\xdef\winkel{\pgfmathresult}
+	\fill[color=patchfarbe]
+		(\winkel:\kurvenradius) circle[radius=0.01];
+}
+
+\begin{scope}
+	\xdef\winkel{\kurvemax}
+	\clip (0:\kurvenradius)
+		circle[radius={\patchradius-0.0025}];
+	\fill[color=schnittfarbe!20] (\winkel:\kurvenradius)
+		circle[radius={\patchradius-0.0025}];
+\end{scope}
+
+
+\node at (-0.8,0.8) {$\mathbb{C}$};
+
+\end{tikzpicture}
+\end{document}
+

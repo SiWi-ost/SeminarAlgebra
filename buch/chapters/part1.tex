@@ -1,0 +1,34 @@
+%
+% part1.tex
+%
+% (c) 2018 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+\begin{refsection}
+\input{chapters/vorwort.tex}
+\part{Grundlagen}
+
+\input{chapters/000-einleitung/chapter.tex}
+\input{chapters/010-komplex/chapter.tex}
+\input{chapters/020-holomorph/chapter.tex}
+\input{chapters/030-integration/chapter.tex}
+\input{chapters/040-analytisch/chapter.tex}
+\input{chapters/050-differentialgleichungen/chapter.tex}
+\input{chapters/060-ratint/chapter.tex}
+\input{chapters/070-intalg/chapter.tex}
+
+% more chapters
+
+%\begin{appendices}
+%\end{appendices}
+\vfill
+\pagebreak
+
+\ifodd\value{page}\else\null\clearpage\fi
+\kopflinks{Literatur}
+\kopfrechts{}
+\printbibliography[heading=subbibliography]
+\label{buch:literatur}
+
+\end{refsection}
+
+

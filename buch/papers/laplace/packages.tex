@@ -1,0 +1,37 @@
+%
+% packages.tex -- packages required by the paper 000template
+%
+% (c) 2019 Prof Dr Andreas Müller, Hochschule Rapperswil
+%
+
+% if your paper needs special packages, add package commands as in the
+% following example
+%\usepackage{packagename}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+% Graphik und TikZ
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{trfsigns} % für \laplace
+\usepackage{bm}
+% decorations.pathmorphing liefert die snake-Dekoration (Verzweigungsschnitt
+% in der Keyhole-Abbildung)
+\usetikzlibrary{decorations.markings, arrows.meta, decorations.pathmorphing}
+% pgfplots fuer die datengetriebenen Abbildungen (Konvergenzvergleich etc.)
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\graphicspath{{papers/laplace/images/}}
+
+\tikzset{
+    ->-/.style={decoration={
+        markings,
+        mark=at position #1 with {\arrow{Stealth[length=3mm, width=2mm]}}},postaction={decorate}}
+}
+
+% Hyperlinks (sollte meist als letztes geladen werden)
+% \usepackage[colorlinks=true, linkcolor=blue, citecolor=blue]{hyperref}

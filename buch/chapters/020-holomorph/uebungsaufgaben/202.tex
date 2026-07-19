@@ -1,0 +1,60 @@
+Betrachten Sie die Funktion $f(z)=z\bar{z}=x^2+y^2$ und berechnen
+Sie die Wirtinger-Ableitungen
+\[
+\frac{\partial f}{\partial z}
+\qquad\text{und}\qquad
+\frac{\partial f}{\partial \bar{z}}.
+\]
+
+
+\begin{loesung}
+Die Definition der Wirtinger-Operatoren ergibt
+\begin{align*}
+\frac{\partial f}{\partial z}
+&=
+\frac12\biggl(
+\frac{\partial}{\partial x}
+-i
+\frac{\partial}{\partial y}
+\biggr)
+(x^2+y^2)
+\\
+&=
+\frac12\bigl(
+2x-i\cdot 2y
+\bigr)
+=
+\bar{z}
+\\
+\frac{\partial f}{\partial \bar{z}}
+&=
+\frac12\biggl(
+\frac{\partial}{\partial x}
++i
+\frac{\partial}{\partial y}
+\biggr)
+(x^2+y^2)
+\\
+&=
+\frac12\bigl(
+2x+i\cdot 2y
+\bigr)
+=
+z.
+\end{align*}
+Formal entspricht dies genau der Produktregel
+\[
+\frac{\partial}{\partial z}(z\bar{z})
+=
+\bar{z}
+\qquad
+\text{und}
+\qquad
+\frac{\partial}{\partial \bar{z}}(z\bar{z})
+=
+z
+\]
+für das Produkt $z\bar{z}$,
+indem $z$ und $\bar{z}$ als unabhängige Variablen betrachtet
+werden können.
+\end{loesung}

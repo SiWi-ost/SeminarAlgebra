@@ -1,0 +1,29 @@
+%
+% main.tex -- Paper zum Thema <buchberger>
+%
+% (c) 2026 Nathanael Fässler, OST Ostschweizer Fachhochschule
+%
+% !TEX root = ../../buch.tex
+% !TEX encoding = UTF-8
+%
+\chapter{Lösung von Polynomgleichungen\label{chapter:buchberger}}
+\kopflinks{Lösung von Polynomgleichungen}
+\begin{refsection}
+\chapterauthor{Nathanael Fässler}
+
+An der OST lernen Studenten der technischen Studiengänge in Vorlesungen der Linearen Algebra, wie man lineare Gleichungssysteme löst.
+Dafür lernen sie den Gauss-Algorithmus kennen.
+Mit diesem Verfahren lässt sich allerdings nur eine Teilmenge der Gleichungssysteme lösen.
+Um Gleichungssysteme mit Polynomgleichungen zu lösen, braucht man ein mächtigeres Werkzeug: den Buchberger-Algorithmus.
+
+Dieses Kapitel erklärt die Erweiterung von linearen Gleichungssystemen zu polynomiellen Gleichungssystemen.
+Im Abschnitt~\ref{buchberger:section:sudoku} wird als interessante Anwendung ein Sudoku in ein Gleichungssystem aus Polynomgleichungen übersetzt und anschliessend mit dem Buchberger-Algorithmus gelöst.
+Abschliessend wird die Komplexitätstheorie von Sudokus und Polynomgleichungssystemen diskutiert.
+
+\input{papers/buchberger/einleitung.tex}
+\input{papers/buchberger/buchberger.tex}
+\input{papers/buchberger/sudoku.tex}
+\input{papers/buchberger/komplexitaet.tex}
+
+\printbibliography[heading=subbibliography]
+\end{refsection}

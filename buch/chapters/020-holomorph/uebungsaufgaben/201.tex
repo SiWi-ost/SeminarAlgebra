@@ -1,0 +1,87 @@
+Finden Sie eine holomorphe Funktion mit dem Imaginärteil
+\[
+\operatorname{Im}f(x+iy)
+=
+v(x,y)
+=
+e^x\sin y.
+\]
+
+\begin{loesung}
+Nach Satz~\ref{buch:holomorph:holomorph:satz:utov} bestimmen sich
+Real- und Imaginärteil gegenseitig.
+Finden kann man ihn durch Integration ausgehend vom Punkt $0\in\mathbb{C}$
+analog zu~\eqref{buch:holomorph:holomorph:eqn:v}
+\begin{align*}
+u(x,y)
+&=
+u_0
++
+\int_0^x \frac{\partial u}{\partial x}(\xi,0)\,d\xi
++
+\int_0^y \frac{\partial u}{\partial y}(x,\eta)\,d\eta
+\\
+&=
+u_0
++
+\int_0^x \frac{\partial v}{\partial y}(\xi,0)\,d\xi
+-
+\int_0^y \frac{\partial v}{\partial x}(x,\eta)\,d\eta
+\\
+&=
+u_0
++
+\int_0^x
+e^\xi\cos 0
+\,d\xi
+-
+\int_0^y
+e^x\sin \eta
+\,d\eta
+\\
+&=
+u_0
++
+\bigl[
+e^\xi
+\bigr]_0^x
+-
+e^x
+\bigl[
+-\cos\eta
+\bigr]_0^y
+\\
+&=
+u_0
++
+e^x
+-
+1
++
+e^x
+(
+\cos y
+-
+1
+)
+\\
+&=
+u_0
+-
+1
++
+e^x\cos y.
+\end{align*}
+Der Realteil ist nur bis auf die Konstanten $u_0=u(0,0)$ festgelegt.
+Für $u_0=1$ ergibt sich
+\begin{align*}
+f(z)
+&=
+e^x \cos y + ie^x \sin y
+=
+e^x (\cos y + i\sin y)
+=
+e^z,
+\end{align*}
+die komplexe Exponentialfunktion.
+\end{loesung}

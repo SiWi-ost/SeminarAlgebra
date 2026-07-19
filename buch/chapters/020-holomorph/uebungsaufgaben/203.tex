@@ -1,0 +1,74 @@
+Von einer holomorphen Funktion $f(z)$ ist bekannt, dass 
+$\operatorname{Re}f(\bar{z})=\operatorname{Re}f(z)$, $f(z)$ hat
+eine konvergente Potenzreihenentwicklung und
+$\operatorname{Re} f(x) = p(x)=a_0+a_1x+\dots+a_{n-1}x^{n-1}+a_nx^n$.
+Zeigen Sie, dass $f(z) = p(z)=a_0+a_1z+\dots+a_{n-1}z^{n-1}+a_nz^n$.
+
+\begin{loesung}
+Der Beweis von Satz~\ref{buch:holomorph:holomorph:satz:polynom}
+funktioniert auch für eine Potenzreihe.
+Wir schreiben den Realteil von $f(z)$ als
+\begin{align*}
+\operatorname{Re}f(x+iy)
+=
+u(x,y)
+&=
+\sum_{k,l}a_{kl}x^ky^l
+\end{align*}
+schreiben.
+Die Symmetriebedingung
+$
+\operatorname{Re}f(z)
+=
+\operatorname{Re}f(\bar{z})
+$
+bedeutet, dass die Ersetzung $y\mapsto -y$ den Ausdruck für $u(x,y)$
+nicht ändert:
+\begin{align*}
+u(x,y)&=u(x,-y)
+&&\Rightarrow&
+\sum_{k,l}a_{kl}x^ky^l
+&=
+\sum_{k,l}a_{kl}x^k(-y)^l
+=
+\sum_{k,l}(-1)^la_{kl}x^ky^l.
+\end{align*}
+Aus einem Koeffizientenvergleich schliesst man, dass
+\[
+a_{kl}=(-1)^l a_{kl}
+\quad
+\forall k,l
+\]
+gilt, was $a_{kl}=0$ für $l$ ungerade zur Folge hat.
+Aus dem Beweis von Satz~\ref{buch:holomorph:holomorph:satz:polynom}
+ist bekannt, dass Koeffizienten $a_{kl}$ mit $l>0$ vollständig durch
+die Koeffizienten $a_{k0}$ bestimmt sind.
+Die Koeffizienten des Polynoms
+$p(z) = a_0+a_1z+a_2z^2+\dots a_nz^n$ müssen
+reell sein und es erfüllt
+\begin{align*}
+\operatorname{Re} f(\bar{z})
+&=
+\operatorname{Re}
+\sum_{k=0}^n
+a_k\bar{z}^k
+=
+\operatorname{Re}
+\overline{
+\sum_{k=0}^n
+a_kz^k
+}
+=
+\operatorname{Re}
+\sum_{k=0}^n
+a_kz^k
+=
+\operatorname{Re}
+f(z).
+\end{align*}
+Das Polynom $p(z)$ ist eine Potenzreihenentwicklung, die entlang
+der reellen Achse mit $f(z)$ übereinstimmt.
+Da die Taylor-Reihe durch die reellen Ableitungen bereits eindeutig
+bestimmt ist, muss $f(z)=p(z)$ sein.
+\end{loesung}
+
